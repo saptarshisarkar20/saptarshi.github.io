@@ -1,6 +1,5 @@
 from flask import Flask, render_template, session, redirect, request
 # from flask_admin import Admin
-from flask_mail import Mail, Message
 # import os
 
 app = Flask(__name__)
