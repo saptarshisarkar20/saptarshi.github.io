@@ -2,15 +2,8 @@ from flask import Flask, render_template, session, redirect, request
 # from flask_admin import Admin
 from flask_mail import Mail, Message
 # import os
-from config import mail_password, mail_username
+
 app = Flask(__name__)
-mail = Mail(app)
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-# app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = mail_username
-app.config['MAIL_PASSWORD'] = mail_password
 
 @app.route('/')
 def home():
@@ -46,4 +39,4 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
